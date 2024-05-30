@@ -6,7 +6,7 @@ const router = Router();
 router.post("/new", async (req, res ) => {
   try {
     const { categoryName, categoryDescription } = req.body;
-    const category = await Category.findone({ categoryName });
+    const category = await Category.findOne({ categoryName });
     if (category) {
       return res.status(400).json({ message: "Category already exists" });
       
